@@ -1,0 +1,50 @@
+import React from 'react'
+
+function Card(props) {
+  const newClassName = `color_bg ${props.alt}`
+  const bgImg = `url(${props.images})`
+  const { title, oldPrice, newPrice, rupess, expDate } = props
+
+  return (
+    <div className="card">
+      <div className="warpper">
+        <div className={newClassName} />
+        <div className="card_img" style={{ backgroundImage: bgImg }} />
+        <div className="heart">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+            <path d="M47 5c-6.5 0-12.9 4.2-15 10-2.1-5.8-8.5-10-15-10A15 15 0 0 0 2 20c0 13 11 26 30 39 19-13 30-26 30-39A15 15 0 0 0 47 5z" />
+          </svg>
+        </div>
+        <div className="cardInfo">
+          <h2>{title}</h2>
+          <p className="date_">{expDate}</p>
+          <div className="action">
+            <div className="priceGroup">
+              <p className="price old_price">
+                {rupess}
+                {oldPrice}
+              </p>
+              <p className="price newPrice">
+                {rupess}
+                {newPrice}
+              </p>
+            </div>
+            <div className="cart">
+              <svg
+                className="outCart"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+              >
+                <path d="M2 6h10l10 40h32l8-24H16" />
+                <circle cx="23" cy="54" r="4" />
+                <circle cx="49" cy="54" r="4" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Card
