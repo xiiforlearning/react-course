@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -50,7 +51,15 @@ module.exports = ({development}) => ({
 	 }),
     new MiniCssExtractPlugin({ filename: "[name].[contenthash].css" }),
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-		new ESLintPlugin({ extensions: ['js'] }) 
+		new ESLintPlugin({ extensions: ['js'] }),
+    new CopyPlugin({
+      patterns: [
+        {
+        from: "./src/assets",
+        to: "./assets",
+        }
+      ], 
+    }),
   ],
 	resolve: {
     extensions: ['.jsx', '.js'],

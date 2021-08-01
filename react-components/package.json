@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src",
     "build": "npm run lint && webpack",
-    "dev": "webpack serve --env development"
+    "dev": "npm run lint && webpack serve --env development"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/xiiforlearning/react-course#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -30,6 +33,7 @@
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
     "css-loader": "^6.2.0",
     "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",
